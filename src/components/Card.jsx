@@ -1,4 +1,4 @@
-function Card({ icon, title, description }) {
+function Card({ icon, title, description, highlight }) {
   return (
     <div
       style={{
@@ -6,7 +6,7 @@ function Card({ icon, title, description }) {
         backgroundColor: "white",
         padding: "32px 24px",
         borderRadius: "12px",
-        border: "1px solid #e0e0e0",
+        border: highlight ? "2px solid #4a90e2" : "1px solid #e0e0e0",
       }}
     >
       <div style={{ fontSize: "28px", marginBottom: "16px" }}>{icon}</div>
@@ -28,6 +28,22 @@ function Card({ icon, title, description }) {
       >
         {description}
       </p>
+      {highlight && (
+        <span
+          style={{
+            display: "inline-block",
+            marginTop: "12px",
+            backgroundColor: "#e8f0fe",
+            color: "#4a90e2",
+            fontSize: "12px",
+            fontWeight: "500",
+            padding: "4px 10px",
+            borderRadius: "99px",
+          }}
+        >
+          Most popular
+        </span>
+      )}
     </div>
   );
 }

@@ -1,4 +1,6 @@
-function Hero() {
+import WaitlistButton from "./WaitlistButton";
+
+function Hero({ onJoin }) {
   return (
     <section
       style={{
@@ -29,34 +31,7 @@ function Hero() {
         The toolkit for solo founders who want to build and launch without a
         team.
       </p>
-      <div style={{ display: "flex", gap: "16px", justifyContent: "center" }}>
-        <button
-          style={{
-            backgroundColor: "#4a90e2",
-            color: "white",
-            border: "none",
-            padding: "14px 28px",
-            borderRadius: "8px",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
-        >
-          Start for free
-        </button>
-        <button
-          style={{
-            backgroundColor: "white",
-            color: "#1a1a2e",
-            border: "1px solid #ddd",
-            padding: "14px 28px",
-            borderRadius: "8px",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
-        >
-          See how it works
-        </button>
-      </div>
+      <WaitlistButton onJoin={onJoin} />
     </section>
   );
 }

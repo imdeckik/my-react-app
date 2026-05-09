@@ -7,18 +7,21 @@ function Features() {
       title: "Ship in days",
       description:
         "Pre-built components and templates so you spend time on your product, not boilerplate.",
+      highlight: false,
     },
     {
       icon: "🔒",
       title: "Auth built in",
       description:
         "Login, signup, and user management handled out of the box. No configuration needed.",
+      highlight: true,
     },
     {
       icon: "📈",
       title: "Analytics ready",
       description:
         "Know exactly how users are using your product from day one.",
+      highlight: false,
     },
   ];
 
@@ -44,6 +47,7 @@ function Features() {
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
+              highlight={feature.highlight}
             />
           );
         })}
