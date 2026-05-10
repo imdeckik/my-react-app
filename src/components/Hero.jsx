@@ -31,7 +31,6 @@ function Hero({ onJoin }) {
         The toolkit for solo founders who want to build and launch without a
         team.
       </p>
-      <WaitlistButton onJoin={onJoin} />
     </section>
   );
 }
