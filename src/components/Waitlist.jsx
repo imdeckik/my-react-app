@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Waitlist() {
   const [email, setEmail] = useState("");
   const [emails, setEmails] = useState([]);
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
+  const [charCount, setCharCount] = useState(0);
+
+  useEffect(
+    function () {
+      console.log("Waitlist updated:", emails);
+    },
+    [emails]
+  );
+
+  useEffect(
+    function () {
+      setCharCount(email.length);
+    },
+    [email]
+  );
 
   function handleSubmit() {
     if (email === "") {
@@ -46,21 +61,24 @@ function Waitlist() {
       </p>
 
       <div className="flex gap-3 justify-center mb-4">
-        <input
-          type="email"
-          value={email}
-          onChange={function (e) {
-            setEmail(e.target.value);
-          }}
-          onKeyDown={function (e) {
-            if (e.key === "Enter") handleSubmit();
-          }}
-          placeholder="Enter your email address"
-          className="px-5 py-3 border border-gray-200 rounded-lg text-base w-72 outline-none focus:border-blue-500"
-        />
+        <div className="flex flex-col items-start">
+          <input
+            type="email"
+            value={email}
+            onChange={function (e) {
+              setEmail(e.target.value);
+            }}
+            onKeyDown={function (e) {
+              if (e.key === "Enter") handleSubmit();
+            }}
+            placeholder="Enter your email address"
+            className="px-5 py-3 border border-gray-200 rounded-lg text-base w-72 outline-none focus:border-blue-500"
+          />
+          <p className="text-xs text-gray-400 mt-1">{charCount} characters</p>
+        </div>
         <button
           onClick={handleSubmit}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-7 py-3 rounded-lg text-base cursor-pointer"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-7 py-3 rounded-lg text-base cursor-pointer h-fit"
         >
           Join
         </button>
