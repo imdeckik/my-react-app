@@ -1,46 +1,15 @@
-function Card({ icon, title, description, highlight }) {
+function Card({ icon, title, description, highlight = false }) {
   return (
     <div
-      style={{
-        flex: "1",
-        backgroundColor: "white",
-        padding: "32px 24px",
-        borderRadius: "12px",
-        border: highlight ? "2px solid #4a90e2" : "1px solid #e0e0e0",
-      }}
+      className={`flex-1 bg-white p-8 rounded-xl ${
+        highlight ? "border-2 border-blue-500" : "border border-gray-200"
+      }`}
     >
-      <div style={{ fontSize: "28px", marginBottom: "16px" }}>{icon}</div>
-      <h3
-        style={{
-          fontSize: "18px",
-          color: "#1a1a2e",
-          marginBottom: "10px",
-        }}
-      >
-        {title}
-      </h3>
-      <p
-        style={{
-          color: "#666",
-          fontSize: "14px",
-          lineHeight: "1.6",
-        }}
-      >
-        {description}
-      </p>
+      <div className="text-3xl mb-4">{icon}</div>
+      <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
+      <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
       {highlight && (
-        <span
-          style={{
-            display: "inline-block",
-            marginTop: "12px",
-            backgroundColor: "#e8f0fe",
-            color: "#4a90e2",
-            fontSize: "12px",
-            fontWeight: "500",
-            padding: "4px 10px",
-            borderRadius: "99px",
-          }}
-        >
+        <span className="inline-block mt-3 bg-blue-50 text-blue-500 text-xs font-medium px-3 py-1 rounded-full">
           Most popular
         </span>
       )}

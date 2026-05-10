@@ -26,20 +26,11 @@ function Features() {
   ];
 
   return (
-    <section
-      style={{ padding: "80px 60px", maxWidth: "1000px", margin: "0 auto" }}
-    >
-      <h2
-        style={{
-          fontSize: "32px",
-          color: "#1a1a2e",
-          textAlign: "center",
-          marginBottom: "40px",
-        }}
-      >
+    <section className="py-20 px-16 max-w-5xl mx-auto">
+      <h2 className="text-4xl font-bold text-gray-900 text-center mb-10">
         Everything you need to launch
       </h2>
-      <div style={{ display: "flex", gap: "24px" }}>
+      <div className="flex gap-6">
         {features.map(function (feature) {
           return (
             <Card

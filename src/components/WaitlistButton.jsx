@@ -2,15 +2,7 @@ function WaitlistButton({ onJoin }) {
   return (
     <button
       onClick={onJoin}
-      style={{
-        backgroundColor: "#4a90e2",
-        color: "white",
-        border: "none",
-        padding: "14px 28px",
-        borderRadius: "8px",
-        fontSize: "16px",
-        cursor: "pointer",
-      }}
+      className="bg-blue-500 hover:bg-blue-600 text-white px-7 py-3 rounded-lg text-base cursor-pointer"
     >
       Join waitlist
     </button>

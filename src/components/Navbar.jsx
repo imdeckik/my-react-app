@@ -1,34 +1,17 @@
 function Navbar() {
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "20px 60px",
-        backgroundColor: "white",
-        borderBottom: "1px solid #eee",
-      }}
-    >
-      <div style={{ fontSize: "22px", fontWeight: "700", color: "#1a1a2e" }}>
-        Momentum
-      </div>
-      <div style={{ display: "flex", gap: "32px", alignItems: "center" }}>
-        <a href="#" style={{ color: "#555", textDecoration: "none" }}>
+    <nav className="flex justify-between items-center px-16 py-5 bg-white border-b border-gray-100">
+      <div className="text-xl font-bold text-gray-900">BuildFast</div>
+      <div className="flex items-center gap-8">
+        <a href="#" className="text-gray-500 hover:text-gray-900 text-sm">
           Features
         </a>
-        <a href="#" style={{ color: "#555", textDecoration: "none" }}>
+        <a href="#" className="text-gray-500 hover:text-gray-900 text-sm">
           Pricing
         </a>
         <a
           href="#"
-          style={{
-            backgroundColor: "#1a1a2e",
-            color: "white",
-            padding: "10px 20px",
-            borderRadius: "6px",
-            textDecoration: "none",
-          }}
+          className="bg-gray-900 text-white px-5 py-2 rounded-md text-sm hover:bg-gray-700"
         >
           Get Started
         </a>

@@ -32,31 +32,12 @@ function Waitlist() {
   }
 
   return (
-    <div
-      style={{
-        textAlign: "center",
-        padding: "80px 60px",
-        maxWidth: "600px",
-        margin: "0 auto",
-      }}
-    >
-      <h2
-        style={{
-          fontSize: "36px",
-          color: "#1a1a2e",
-          marginBottom: "16px",
-        }}
-      >
+    <div className="text-center py-20 px-16 max-w-xl mx-auto">
+      <h2 className="text-4xl font-bold text-gray-900 mb-4">
         Join the waitlist
       </h2>
 
-      <p
-        style={{
-          color: "#666",
-          marginBottom: "32px",
-          fontSize: "18px",
-        }}
-      >
+      <p className="text-gray-500 text-lg mb-8">
         {emails.length === 0
           ? "Be the first to know when we launch."
           : `${emails.length} ${
@@ -64,14 +45,7 @@ function Waitlist() {
             } already waiting.`}
       </p>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "12px",
-          justifyContent: "center",
-          marginBottom: "16px",
-        }}
-      >
+      <div className="flex gap-3 justify-center mb-4">
         <input
           type="email"
           value={email}
@@ -82,26 +56,11 @@ function Waitlist() {
             if (e.key === "Enter") handleSubmit();
           }}
           placeholder="Enter your email address"
-          style={{
-            padding: "14px 20px",
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            fontSize: "16px",
-            width: "280px",
-            outline: "none",
-          }}
+          className="px-5 py-3 border border-gray-200 rounded-lg text-base w-72 outline-none focus:border-blue-500"
         />
         <button
           onClick={handleSubmit}
-          style={{
-            backgroundColor: "#4a90e2",
-            color: "white",
-            border: "none",
-            padding: "14px 28px",
-            borderRadius: "8px",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-7 py-3 rounded-lg text-base cursor-pointer"
         >
           Join
         </button>
@@ -109,36 +68,24 @@ function Waitlist() {
 
       {message && (
         <p
-          style={{
-            color: messageType === "success" ? "#27ae60" : "#e74c3c",
-            fontSize: "15px",
-            fontWeight: "500",
-          }}
+          className={`text-sm font-medium ${
+            messageType === "success" ? "text-green-500" : "text-red-500"
+          }`}
         >
           {message}
         </p>
       )}
 
       {emails.length > 0 && (
-        <div style={{ marginTop: "40px", textAlign: "left" }}>
-          <h3
-            style={{ fontSize: "16px", color: "#1a1a2e", marginBottom: "12px" }}
-          >
+        <div className="mt-10 text-left">
+          <h3 className="text-base font-semibold text-gray-900 mb-3">
             On the waitlist:
           </h3>
           {emails.map(function (e) {
             return (
               <div
                 key={e}
-                style={{
-                  padding: "10px 16px",
-                  backgroundColor: "white",
-                  borderRadius: "8px",
-                  border: "1px solid #eee",
-                  marginBottom: "8px",
-                  fontSize: "14px",
-                  color: "#555",
-                }}
+                className="px-4 py-3 bg-white rounded-lg border border-gray-100 mb-2 text-sm text-gray-500"
               >
                 {e}
               </div>
